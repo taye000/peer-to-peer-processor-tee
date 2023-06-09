@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const middleware_1 = require("../../middleware");
+const transaction_1 = require("../../controllers/transaction");
+const router = (0, express_1.Router)();
+router.get("/get-transaction/:id", middleware_1.validateRequest, middleware_1.validateToken, transaction_1.getUserTransaction);
+router.get("/get-transactions", middleware_1.validateRequest, middleware_1.validateToken, transaction_1.getUserTransactions);
+router.post("/create-transaction", middleware_1.validateRequest, middleware_1.validateToken, transaction_1.createTransactionController);
+router.post("/callback-url", transaction_1.MpesaCallbackURL);
+module.exports = router;
