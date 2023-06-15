@@ -11,7 +11,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            CC By{' '}
             <Image
               src="/CRYPTO ICONS.svg"
               alt="CRYPTO ICONS Logo"
